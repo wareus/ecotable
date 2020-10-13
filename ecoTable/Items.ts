@@ -47,26 +47,46 @@ interface Ingredient
 
 const items = [
     {
-        name: 'test',
-        price: 12,
+        name: 'Wood',
+        price: 10,
         ingredients: [],
     },
     {
-        name: 'test2',
-        ingredients: [{name: 'test', number:2}],
-        labor: 100,
-        extra: 100
+        name: 'Crushed Iron Ore',
+        price: 50,
+        ingredients: [],
     },
     {
-        name: 'test3',
-        ingredients: [{name: 'test2', number:2}],
-        labor: 1000,
-        extra: 1000
+        name: 'Cast Iron Stove',
+        ingredients: [{name: 'Iron Bar', number:8}, {name: 'Lumber', number:8}],
+        labor: 500
     },
     {
-        name: 'test4',
-        ingredients: [{name: 'test2', number:1}, {name: 'test', number:2}],
-        labor: 1000,
+        name: 'Iron Bar',
+        ingredients: [{name: 'Iron Concentrate', number:0.66}],
+        labor: 50,
+        extra: 50
+    },
+    {
+        name: 'Iron Concentrate',
+        ingredients: [{name: 'Crushed Iron Ore', number:5}],
+        labor: 40,
+        extra: 50
+    },
+    {
+        name: 'Lumber',
+        ingredients: [{name: 'Nail', number:4}, {name: 'HewnLog', number:4}],
+        labor: 60,
+    },
+    {
+        name: 'HewnLog',
+        ingredients: [{name: 'Wood', number:2}],
+        labor: 30,
+    },
+    {
+        name: 'Nail',
+        ingredients: [{name: 'Iron Bar', number:0.0625}],
+        labor: 5,
     },
 
 ] as Item[]
