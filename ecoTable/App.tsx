@@ -20,7 +20,7 @@ export const App = () =>
             dataIndex: 'ingredients',
             key:'ingredients',
             render: ingredients => {
-            return ingredients.map(ingredient => <span>{ingredient.number} x {ingredient.name}</span>)
+            return ingredients.map(ingredient => <span>{ingredient.number} x {ingredient.name}, </span>)
             }
         },
         {
