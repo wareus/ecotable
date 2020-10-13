@@ -1,9 +1,9 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-
-console.log('Hello from tsx!')
+import { App } from './App'
+import 'antd/dist/antd.css';
 
 ReactDOM.render(
-  <p>Hello</p>,
+  <App/>,
   document.getElementById('root'),
 )
