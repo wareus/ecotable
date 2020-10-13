@@ -1,20 +1,54 @@
 export const getItems: () => Item[] = () => {
     
-    return [
-        {
-        name: 'test',
-        price: 12
-    },
+    return items.map(item => setPrice(item))
+        
+}
+
+const setPrice = (item:Item) => {
+    
+    if(item.price) return item
+    
+    if(item.ingredients.length > 0)
     {
-        name: 'test2',
-        price: 121
+        const totalPrice = item.ingredients.map(ingredient => {
+            const item = findItem(ingredient)
+            const price = item.price || 0
+            return price * ingredient.number
+        }).reduce((total, price) => total+price, 0)
+
+        return {...item, price: totalPrice}
     }
-] as Item[]
+
+    return {...item, info:'Missing price', price: 0}
+}
+
+const findItem = (ingredient:Ingredient) =>{
+    return items.filter(item => item.name === ingredient.name)[0]
 }
 
 interface Item
 {
     name:string,
-    price:number
-
+    price?:number
+    ingredients: Ingredient []
+    info?: string
 }
+
+interface Ingredient
+{
+    name:string,
+    number:number
+}
+
+const items = [
+    {
+        name: 'test',
+        price: 12,
+        ingredients: []
+    },
+    {
+        name: 'test2',
+        ingredients: [{name: 'test', number:2}]
+    }
+] as Item[]
+

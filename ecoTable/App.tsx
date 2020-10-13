@@ -1,5 +1,5 @@
 import React from 'react'
-import {Table, Tag, Space} from 'antd'
+import {Table, Alert} from 'antd'
 import { getItems } from './Items';
 
 export const App = () =>
@@ -15,6 +15,20 @@ export const App = () =>
           dataIndex: 'price',
           key: 'price',
         },
+        {
+            title:'Components',
+            dataIndex: 'ingredients',
+            key:'ingredients',
+            render: ingredients => {
+            return ingredients.map(ingredient => <span>{ingredient.number} x {ingredient.name}</span>)
+            }
+        },
+        {
+            title:'Info',
+            dataIndex: 'info',
+            key:'info',
+            render: info => <span style={{color:"red"}}>{info}</span>
+        }
       ];
       
 
