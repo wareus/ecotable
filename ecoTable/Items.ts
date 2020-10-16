@@ -47,6 +47,21 @@ interface Ingredient
 
 const items = [
     {
+        name: 'Mortar',
+        price: 30,
+        ingredients: [],
+    },
+    {
+        name: 'Stone',
+        price: 10,
+        ingredients: [],
+    },
+    {
+        name: 'Plant Fibers',
+        price: 1,
+        ingredients: [],
+    },
+    {
         name: 'Wood',
         price: 10,
         ingredients: [],
@@ -87,6 +102,46 @@ const items = [
         name: 'Nail',
         ingredients: [{name: 'Iron Bar', number:0.0625}],
         labor: 5,
+    },
+    {
+        name: 'Hand Plow',
+        ingredients: [{name: 'Iron Bar', number:10}, {name: 'HewnLog', number:10}, {name: 'Wood Board', number:50}, {name: 'Wooden Wheel', number:1}],
+        labor: 100,
+    },
+    {
+        name: 'Wood Board',
+        ingredients: [{name: 'HewnLog', number:1}],
+        labor: 60,
+    },
+    {
+        name: 'Wooden Wheel',
+        ingredients: [{name: 'HewnLog', number:4}],
+        labor: 60,
+    },
+    {
+        name: 'Basic Upgrade 4',
+        ingredients: [{name: 'Wooden Wheel', number:20}, {name: 'Plant Fibers', number:120}, {name: 'Basic Upgrade 3', number:1}],
+        labor: 100,
+    },
+    {
+        name: 'Basic Upgrade 3',
+        ingredients: [{name: 'Wood Board', number:20}, {name: 'Plant Fibers', number:80}, {name: 'Basic Upgrade 2', number:1}],
+        labor: 100,
+    },
+    {
+        name: 'Basic Upgrade 2',
+        ingredients: [{name: 'Mortar', number:20}, {name: 'Mortared Stone', number:20}, {name: 'Basic Upgrade 1', number:1}],
+        labor: 100,
+    },
+    {
+        name: 'Basic Upgrade 1',
+        ingredients: [{name: 'HewnLog', number:40}],
+        labor: 100,
+    },
+    {
+        name: 'Mortared Stone',
+        ingredients: [{name: 'Mortar', number:1},{name: 'Stone', number:4}],
+        labor: 30,
     },
 
 ] as Item[]
