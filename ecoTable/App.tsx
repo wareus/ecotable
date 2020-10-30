@@ -24,6 +24,16 @@ export const App = () =>
             }
         },
         {
+          title: 'Labor',
+          dataIndex: 'labor',
+          key: 'labor',
+        },
+        {
+          title: 'Extra',
+          dataIndex: 'extra',
+          key: 'extra',
+        },
+        {
             title:'Info',
             dataIndex: 'info',
             key:'info',
@@ -32,5 +42,5 @@ export const App = () =>
       ];
       
 
-    return <Table columns={columns} dataSource={getItems()} />
+    return <Table columns={columns} dataSource={getItems()} pagination={false} />
 }
